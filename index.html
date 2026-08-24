@@ -1,9 +1,74 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f5efe4"><title>Miray & Ramazan</title><link rel="stylesheet" href="style.css"></head><body>
-<div id="cover" class="cover" aria-label="Davetiyeyi aç"><div class="door left"></div><div class="door right"></div><button id="seal" aria-label="Mührü aç"><span>AÇMAK İÇİN</span><b>dokunun</b></button></div>
-<main id="invite" class="invite" aria-hidden="true">
-  <img class="main-card" src="assets/davetiye.png" alt="Miray ve Ramazan nişan davetiyesi">
-  <section class="continuation countdown"><h2>BÜYÜK GÜNE KALAN SÜRE</h2><div class="orn">— ❦ ♥ ❦ —</div><div class="counter"><div><strong id="days">00</strong><span>GÜN</span></div><div><strong id="hours">00</strong><span>SAAT</span></div><div><strong id="mins">00</strong><span>DK</span></div><div><strong id="secs">00</strong><span>SN</span></div></div></section>
-  <section class="continuation flow"><h2>NİŞAN AKIŞI</h2><div class="orn">— ❦ ♥ ❦ —</div><div class="timeline"><article><time>20:00</time><div><b>Karşılama & İsteme</b></div></article><article><time>20:30</time><div><b>Yüzük Merasimi</b></div></article><article><time>21:00</time><div><b>Eğlence</b></div></article><article><time>23:30</time><div><b>Kapanış</b></div></article></div></section>
-  <section class="continuation venue"><h2>MEKAN</h2><div class="orn">— ❦ ♥ ❦ —</div><h3>Harmonie Davet Evi</h3><p>Aşağı Mahalle, Şaban Çavuş Caddesi No:23<br>Acıpayam / Denizli</p><div class="map"><iframe title="Harmonie Davet Evi haritası" src="https://www.google.com/maps?q=Harmonie%20Davet%20Evi%20Acipayam%20Denizli&output=embed" loading="lazy"></iframe></div><a class="route" href="https://maps.app.goo.gl/Lww8wdSa7mQRnWNNA?g_st=iw" target="_blank" rel="noopener">YOL TARİFİ AL</a><div class="bottom-orn">❦ ♥ ❦</div></section>
-</main>
-<audio id="music" src="assets/muzik.mp3" preload="auto" loop></audio><button id="musicBtn" class="music-btn" aria-label="Müziği aç veya kapat">♫</button><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#efe7dc">
+  <title>Miray & Ramazan | Nişan Davetiyesi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+  <audio id="music" src="assets/muzik.mp3" preload="auto" loop></audio>
+
+  <section id="cover" class="cover" aria-label="Davetiyeyi aç">
+    <div class="door left"></div>
+    <div class="door right"></div>
+    <button id="seal" class="seal-button" aria-label="Davetiyeyi aç"></button>
+    <div class="tap-copy" aria-hidden="true">
+      <span>AÇMAK İÇİN</span>
+      <em>dokunun</em>
+    </div>
+  </section>
+
+  <button id="musicToggle" class="music-toggle" aria-label="Müziği aç veya kapat">♪</button>
+
+  <main id="invite" class="invite" aria-hidden="true">
+    <section class="approved-top" aria-label="Miray ve Ramazan nişan davetiyesi">
+      <img src="assets/davetiye.png" alt="Miray ve Ramazan nişan davetiyesi, 12 Eylül 2026 Cumartesi saat 20:00">
+    </section>
+
+    <section class="continuation">
+      <img class="emboss emboss-left" src="assets/leaf-left.png" alt="" aria-hidden="true">
+      <img class="emboss emboss-right" src="assets/leaf-right.png" alt="" aria-hidden="true">
+
+      <section class="countdown-block block">
+        <h2>BÜYÜK GÜNE KALAN SÜRE</h2>
+        <div class="counter" aria-label="Nişana kalan süre">
+          <div><strong id="days">00</strong><span>GÜN</span></div>
+          <div><strong id="hours">00</strong><span>SAAT</span></div>
+          <div><strong id="minutes">00</strong><span>DK</span></div>
+          <div><strong id="seconds">00</strong><span>SN</span></div>
+        </div>
+      </section>
+
+      <div class="simple-divider" aria-hidden="true"></div>
+
+      <section class="flow-block block">
+        <h2>NİŞAN AKIŞI</h2>
+        <div class="timeline">
+          <article><time>20:00</time><span>Karşılama &amp; İsteme</span></article>
+          <article><time>20:30</time><span>Yüzük Merasimi</span></article>
+          <article><time>21:00</time><span>Eğlence</span></article>
+          <article><time>23:30</time><span>Kapanış</span></article>
+        </div>
+      </section>
+
+      <div class="simple-divider after-flow" aria-hidden="true"></div>
+
+      <section class="venue-block block">
+        <h2>MEKAN</h2>
+        <h3>Harmonie Davet Evi</h3>
+        <p>Aşağı Mahallesi, Şaban Çavuş Caddesi No:23<br>Acıpayam / Denizli</p>
+        <a class="map-wrap" href="https://maps.app.goo.gl/Lww8wdSa7mQRnWNNA?g_st=iw" target="_blank" rel="noopener" aria-label="Harmonie Davet Evi konumunu Google Maps'te aç">
+          <img src="assets/konum.jpg" alt="Harmonie Davet Evi gerçek konum haritası">
+        </a>
+        <a class="route" href="https://maps.app.goo.gl/Lww8wdSa7mQRnWNNA?g_st=iw" target="_blank" rel="noopener">YOL TARİFİ AL</a>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
