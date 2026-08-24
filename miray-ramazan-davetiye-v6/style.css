@@ -1,0 +1,114 @@
+:root{
+  --paper:#efe6d9;
+  --ink:#294236;
+  --gold:#ad8448;
+  --gold2:#bc9557;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif}
+body.locked{overflow:hidden}
+
+.cover{position:fixed;inset:0;z-index:50;overflow:hidden;background:#f0e9df}
+.door{position:absolute;inset:0;background:url("assets/zarf.jpg") center/cover no-repeat;transition:transform 1.55s cubic-bezier(.72,0,.2,1),opacity .8s}
+.door.left{clip-path:inset(0 50% 0 0);transform-origin:left}
+.door.right{clip-path:inset(0 0 0 50%);transform-origin:right}
+.cover.open .door.left{transform:translateX(-101%)}
+.cover.open .door.right{transform:translateX(101%)}
+.seal-button{position:absolute;z-index:3;left:50%;top:50%;width:175px;height:175px;transform:translate(-50%,-50%);border:0;border-radius:50%;background:transparent;cursor:pointer}
+.tap-copy{position:absolute;z-index:4;left:50%;top:65.8%;transform:translateX(-50%);text-align:center;color:#7d633d;pointer-events:none;text-shadow:0 1px 1px #fff}
+.tap-copy span{display:block;font-size:13px;letter-spacing:.18em;font-weight:600}
+.tap-copy em{display:block;margin-top:4px;font-size:23px}
+.cover.open .seal-button,.cover.open .tap-copy{opacity:0;pointer-events:none}
+
+.music-toggle{position:fixed;right:17px;top:max(17px,env(safe-area-inset-top));z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold2);background:rgba(247,241,231,.94);color:#a27835;font-size:23px;display:none;align-items:center;justify-content:center;box-shadow:0 4px 18px #4c3a1f14}
+.music-toggle.show{display:flex}.music-toggle.muted{opacity:.55}
+
+.invite{width:min(100%,620px);margin:0 auto;background:var(--paper);opacity:0;transition:opacity .55s;overflow:hidden}
+.invite.show{opacity:1}
+.approved-top{position:relative;background:var(--paper);z-index:2}
+.approved-top img{display:block;width:100%;height:auto}
+
+/* IMPORTANT: continuation is full width. Side frame is drawn at the exact same x-position
+   as the approved design, so there is no second block, margin jump or restarted frame. */
+.continuation{
+  position:relative;
+  margin:0;
+  padding:26px 8.2% 54px;
+  text-align:center;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(255,255,255,.20) 0 1px,transparent 1.2px),
+    radial-gradient(circle at 72% 48%,rgba(120,85,45,.025) 0 1px,transparent 1.2px),
+    var(--paper);
+  background-size:11px 11px,14px 14px,auto;
+}
+.continuation::before,.continuation::after{
+  content:"";position:absolute;top:-4px;bottom:0;width:1px;background:var(--gold);z-index:1;pointer-events:none
+}
+.continuation::before{left:6.48%}
+.continuation::after{right:6.59%}
+
+.block,.wing-motif,.footer-motif{position:relative;z-index:3}
+.emboss{position:absolute;z-index:2;opacity:.62;pointer-events:none;filter:saturate(.75) brightness(1.05)}
+.emboss-left{width:132px;left:-20px;top:520px}
+.emboss-right{width:132px;right:-22px;bottom:10px;transform:scaleX(-1)}
+
+h2{margin:0;color:var(--ink);font-size:24px;font-weight:600;letter-spacing:.14em}
+.countdown-block{padding:8px 0 24px}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:500px;margin:26px auto 0}
+.counter>div{border:1px solid var(--gold2);border-radius:14px;padding:18px 4px 13px;background:rgba(255,255,255,.08)}
+.counter strong{display:block;font-size:37px;font-weight:500;line-height:1}
+.counter span{display:block;margin-top:8px;font-size:13px;letter-spacing:.08em}
+
+.wing-motif,.footer-motif{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  width:210px;margin:5px auto 27px;color:var(--gold)
+}
+.wing-motif .line,.footer-motif .line{width:52px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.wing-motif .flip-line,.footer-motif .flip-line{transform:scaleX(-1)}
+.wing-motif .leaf,.footer-motif .leaf{font-size:18px;line-height:1;transform:rotate(-12deg)}
+.wing-motif .flip,.footer-motif .flip{transform:scaleX(-1) rotate(-12deg)}
+.wing-motif .heart,.footer-motif .heart{font-size:15px;line-height:1}
+
+.flow-block{padding:0}
+.timeline{position:relative;max-width:390px;margin:25px auto 0;text-align:left}
+.timeline:before{content:"";position:absolute;left:77px;top:11px;bottom:12px;width:1px;background:var(--gold2)}
+.timeline article{position:relative;display:grid;grid-template-columns:62px 1fr;gap:34px;align-items:center;min-height:82px}
+.timeline article:after{content:"";position:absolute;left:71px;top:50%;width:12px;height:12px;transform:translateY(-50%);border:1px solid var(--gold);border-radius:50%;background:var(--paper)}
+.timeline time{font-size:20px;color:#a67931;text-align:right}
+.timeline span{font-size:23px;line-height:1.1}
+
+.venue-block{padding:0;margin-top:6px}
+.venue-separator{margin:0 auto 16px}
+.venue-block h2{margin:0 0 12px}
+.venue-block h3{margin:0 0 4px;font-size:22px;font-weight:500}
+.venue-block p{margin:0 auto 15px;font-size:16px;line-height:1.35;max-width:470px}
+
+.map-wrap{
+  position:relative;display:block;width:min(100%,500px);height:235px;
+  overflow:hidden;border:1px solid var(--gold2);border-radius:12px;
+  background:#eee;margin:0 auto 14px;text-decoration:none
+}
+.map-wrap iframe{display:block;width:100%;height:100%;border:0;pointer-events:none}
+.map-overlay{position:absolute;inset:0;z-index:2}
+
+.route{display:block;width:min(100%,500px);margin:0 auto;padding:14px 20px;border-radius:8px;border:1px solid var(--gold);background:#294437;color:#fff8ec;text-decoration:none;letter-spacing:.11em;font-size:16px;font-weight:600}
+.footer-motif{margin:24px auto 0}
+
+@media(max-width:520px){
+  .continuation{padding:22px 8.2% 46px}
+  h2{font-size:20px;letter-spacing:.12em}
+  .counter{gap:7px;margin-top:22px}
+  .counter>div{padding:15px 2px 11px;border-radius:12px}
+  .counter strong{font-size:30px}.counter span{font-size:12px}
+  .timeline{max-width:335px;margin-top:22px}
+  .timeline:before{left:70px}
+  .timeline article{grid-template-columns:57px 1fr;gap:30px;min-height:78px}
+  .timeline article:after{left:64px}
+  .timeline time{font-size:18px}.timeline span{font-size:20px}
+  .venue-block h3{font-size:20px}.venue-block p{font-size:14px}
+  .map-wrap{height:215px}
+  .emboss-left,.emboss-right{width:112px}
+}
+@media(prefers-reduced-motion:reduce){.door,.invite{transition-duration:.01ms!important}}
