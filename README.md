@@ -1,10 +1,4 @@
-# Miray & Ramazan Dijital Davetiye v4
+Miray & Ramazan Dijital Davetiye v5
 
-GitHub Pages için güncel paket.
-
-- Mühre dokununca müzik başlar.
-- Gönderilen yeni müzik kullanılır; sonda fade-out, yeniden başlarken fade-in uygulanır.
-- Konum alanı gerçek konum görselidir ve tıklanınca gönderilen Google Maps bağlantısını açar.
-- “Yol Tarifi Al” aynı konuma gider.
-
-GitHub'a yüklerken mevcut `index.html`, `style.css`, `script.js`, `README.md` ve `assets` klasörünü bu pakettekilerle değiştirin.
+GitHub deposundaki mevcut index.html, style.css, script.js ve assets klasörünü bu pakettekilerle değiştirin.
+Konum: Acıpayam Harmonie Davet Evi. Harita ve Yol Tarifi Al butonu verilen Google Maps bağlantısına gider.
