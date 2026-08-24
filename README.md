@@ -1,15 +1,12 @@
-# Miray & Ramazan Dijital Davetiye v7
+# Miray & Ramazan Dijital Davetiye – Düzeltilmiş V6
 
-Bu sürüm doğrudan son v6 paketi üzerinden düzenlendi.
+Bu paket doğrudan gönderilen V6 dosyaları üzerinden düzenlendi.
 
-- Ana davetiye görselinin tasarımı değiştirilmedi.
-- Ana davetiye ile sayaç arasındaki devam bölümü 3px üst üste bindirilerek birleşim çizgisi gizlendi.
-- Devam zemini, ana davetiyenin alt kısmından ölçülen aynı krem kâğıt tonuna getirildi.
-- Altın yan çizgiler aynı eksende kesintisiz devam ediyor; yeni kıvrım veya yeni çerçeve başlamıyor.
-- Kırmızı/emoji kalp kullanılmıyor.
-- Nişan Akışı başlığının üstünde yalnızca küçük gold kalp var.
-- Nişan Akışı başlığının hemen altında çizgi veya kalp yok.
-- Yapraklı gold kalp motifi, ana davetiyedeki gerçek süslemeden alınarak şeffaf PNG olarak kullanılıyor.
-- Müzik, konum, sayaç ve diğer fonksiyonlar v6'daki haliyle korunuyor.
+- Ana davetiye görseli değiştirilmedi.
+- Ana davetiye ile devam bölümü arasındaki boşluk azaltıldı.
+- Altın yan çerçeve devam bölümünde aynı hizada sürüyor.
+- Nişan Akışı üstündeki süs yalnızca tek, metin biçiminde altın kalp olarak düzenlendi.
+- Emoji/kırmızı kalp görünümü engellendi.
+- Diğer içerik ve müzik davranışı korundu.
 
-GitHub'da ZIP klasörünü değil, ZIP'i ayıkladıktan sonra içindeki dosyaların tamamını repository köküne yükleyin.
+GitHub: ZIP içeriğini repository köküne yükleyip mevcut dosyaların üzerine yazın ve Commit changes deyin. Pages ayarını değiştirmeyin.

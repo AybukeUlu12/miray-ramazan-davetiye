@@ -1,5 +1,5 @@
 :root{
-  --paper:#eee4d7;
+  --paper:#efe6d9;
   --ink:#294236;
   --gold:#ad8448;
   --gold2:#bc9557;
@@ -29,77 +29,57 @@ body.locked{overflow:hidden}
 .approved-top{position:relative;background:var(--paper);z-index:2}
 .approved-top img{display:block;width:100%;height:auto}
 
-/* The continuation is deliberately overlapped by 3px and uses the exact paper
-   tone sampled from the approved invitation image. No new panel, curve or restart. */
+/* IMPORTANT: continuation is full width. Side frame is drawn at the exact same x-position
+   as the approved design, so there is no second block, margin jump or restarted frame. */
 .continuation{
   position:relative;
-  margin:-3px 0 0;
-  padding:31px 8.2% 54px;
+  margin:0;
+  padding:18px 8.2% 54px;
   text-align:center;
   overflow:hidden;
-  background:var(--paper);
-  border:0;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(255,255,255,.20) 0 1px,transparent 1.2px),
+    radial-gradient(circle at 72% 48%,rgba(120,85,45,.025) 0 1px,transparent 1.2px),
+    var(--paper);
+  background-size:11px 11px,14px 14px,auto;
 }
 .continuation::before,.continuation::after{
-  content:"";
-  position:absolute;
-  top:-8px;
-  bottom:0;
-  width:1px;
-  background:#ab884f;
-  z-index:1;
-  pointer-events:none;
+  content:"";position:absolute;top:-4px;bottom:0;width:1px;background:var(--gold);z-index:1;pointer-events:none
 }
-.continuation::before{left:6.4825%}
-.continuation::after{right:6.5887%}
+.continuation::before{left:6.48%}
+.continuation::after{right:6.59%}
 
-.block,.single-gold-heart{
-  position:relative;
-  z-index:3;
-  height:28px;
-  margin:4px auto 13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.single-gold-heart span{
-  position:relative;
-  width:11px;
-  height:11px;
-  background:linear-gradient(135deg,#d7b76d 0%,#a77731 55%,#e3c986 100%);
-  transform:rotate(-45deg);
-  display:block;
-  box-shadow:0 1px 1px rgba(90,60,20,.18);
-}
-.single-gold-heart span::before,
-.single-gold-heart span::after{
-  content:"";
-  position:absolute;
-  width:11px;
-  height:11px;
-  border-radius:50%;
-  background:inherit;
-}
-.single-gold-heart span::before{top:-5.5px;left:0}
-.single-gold-heart span::after{left:5.5px;top:0}
+.block,.wing-motif,.footer-motif{position:relative;z-index:3}
+.emboss{position:absolute;z-index:2;opacity:.62;pointer-events:none;filter:saturate(.75) brightness(1.05)}
+.emboss-left{width:132px;left:-20px;top:520px}
+.emboss-right{width:132px;right:-22px;bottom:10px;transform:scaleX(-1)}
 
-.gold-wing{
-  position:relative;
-  z-index:3;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+h2{margin:0;color:var(--ink);font-size:24px;font-weight:600;letter-spacing:.14em}
+.countdown-block{padding:8px 0 24px}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:500px;margin:26px auto 0}
+.counter>div{border:1px solid var(--gold2);border-radius:14px;padding:18px 4px 13px;background:rgba(255,255,255,.08)}
+.counter strong{display:block;font-size:37px;font-weight:500;line-height:1}
+.counter span{display:block;margin-top:8px;font-size:13px;letter-spacing:.08em}
+
+.wing-motif,.footer-motif{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  width:210px;margin:5px auto 27px;color:var(--gold)
 }
-.gold-wing img{
-  display:block;
-  width:190px;
-  max-width:52%;
-  height:auto;
+.wing-motif .line,.footer-motif .line{width:52px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.wing-motif .flip-line,.footer-motif .flip-line{transform:scaleX(-1)}
+.wing-motif .leaf,.footer-motif .leaf{font-size:18px;line-height:1;transform:rotate(-12deg)}
+.wing-motif .flip,.footer-motif .flip{transform:scaleX(-1) rotate(-12deg)}
+.wing-motif .heart,.footer-motif .heart{font-size:15px;line-height:1}
+
+
+.single-gold-heart{
+  position:relative;z-index:3;display:flex;align-items:center;justify-content:center;
+  width:100%;margin:2px auto 22px;color:var(--gold);font-family:Georgia,"Times New Roman",serif;
 }
-.footer-motif{margin:22px auto 0}
+.single-gold-heart span{font-size:17px;line-height:1;font-variant-emoji:text}
 
 .flow-block{padding:0}
-.timeline{position:relative;max-width:390px;margin:23px auto 0;text-align:left}
+.timeline{position:relative;max-width:390px;margin:25px auto 0;text-align:left}
 .timeline:before{content:"";position:absolute;left:77px;top:11px;bottom:12px;width:1px;background:var(--gold2)}
 .timeline article{position:relative;display:grid;grid-template-columns:62px 1fr;gap:34px;align-items:center;min-height:82px}
 .timeline article:after{content:"";position:absolute;left:71px;top:50%;width:12px;height:12px;transform:translateY(-50%);border:1px solid var(--gold);border-radius:50%;background:var(--paper)}
@@ -107,7 +87,7 @@ body.locked{overflow:hidden}
 .timeline span{font-size:23px;line-height:1.1}
 
 .venue-block{padding:0;margin-top:6px}
-.venue-separator{margin:4px auto 16px}
+.venue-separator{margin:0 auto 16px}
 .venue-block h2{margin:0 0 12px}
 .venue-block h3{margin:0 0 4px;font-size:22px;font-weight:500}
 .venue-block p{margin:0 auto 15px;font-size:16px;line-height:1.35;max-width:470px}
@@ -124,7 +104,7 @@ body.locked{overflow:hidden}
 .footer-motif{margin:24px auto 0}
 
 @media(max-width:520px){
-  .continuation{padding:28px 8.2% 46px}
+  .continuation{padding:16px 8.2% 46px}
   h2{font-size:20px;letter-spacing:.12em}
   .counter{gap:7px;margin-top:22px}
   .counter>div{padding:15px 2px 11px;border-radius:12px}
