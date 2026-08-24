@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4efe5">
+  <title>Miray & Ramazan | Nişan Davetiyesi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Italiana&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+  <audio id="music" src="assets/muzik.mp3" loop preload="auto"></audio>
+
+  <section id="envelope" class="envelope-screen" aria-label="Davetiyeyi aç">
+    <div class="env-half env-left"></div>
+    <div class="env-half env-right"></div>
+    <button id="seal" class="seal-hit" aria-label="Mührü aç">
+      <span>Dokun ve Aç</span>
+    </button>
+  </section>
+
+  <section id="nameIntro" class="name-intro" aria-hidden="true">
+    <div class="intro-ornament">❧</div>
+    <h1>Miray <i>&</i> Ramazan</h1>
+    <div class="intro-ornament">❧</div>
+  </section>
+
+  <button id="soundToggle" class="sound-toggle" aria-label="Müziği aç veya kapat">♪</button>
+
+  <main id="invitation" class="invitation">
+    <div class="paper">
+      <section class="hero section">
+        <div class="emboss emboss-tr">❧</div>
+        <div class="ornament">— ❧ ♥ ❧ —</div>
+        <h1>Miray <span>&</span> Ramazan</h1>
+        <div class="ornament">— ❧ ♥ ❧ —</div>
+        <h2>NİŞANIMIZA DAVETLİSİNİZ</h2>
+        <div class="date-time">
+          <div><b>▣</b><strong>12.09.2026</strong><small>CUMARTESİ</small></div>
+          <i></i>
+          <div><b>◷</b><strong>20:00</strong></div>
+        </div>
+        <div class="divider">♥</div>
+        <p>Bu özel günümüzde<br>sizleri de aramızda görmekten<br>mutluluk duyarız...</p>
+      </section>
+
+      <section class="section countdown-section">
+        <div class="ornament">— ❧ ♥ ❧ —</div>
+        <h3>BÜYÜK GÜNE KALAN SÜRE</h3>
+        <div class="countdown" id="countdown">
+          <div><strong id="days">00</strong><span>GÜN</span></div>
+          <div><strong id="hours">00</strong><span>SAAT</span></div>
+          <div><strong id="minutes">00</strong><span>DK</span></div>
+          <div><strong id="seconds">00</strong><span>SN</span></div>
+        </div>
+      </section>
+
+      <section class="section flow-section">
+        <div class="ornament">— ❧ ♥ ❧ —</div>
+        <h3>NİŞAN AKIŞI</h3>
+        <div class="timeline">
+          <article><time>20:00</time><div><b>Karşılama & İsteme</b><span>Hoş geldiniz</span></div></article>
+          <article><time>20:30</time><div><b>Yüzük Merasimi</b><span>En özel an</span></div></article>
+          <article><time>21:00</time><div><b>Eğlence</b><span>Birlikte kutluyoruz</span></div></article>
+          <article><time>23:30</time><div><b>Kapanış</b><span>Gecenin sonu</span></div></article>
+        </div>
+      </section>
+
+      <section class="section venue-section">
+        <div class="ornament">— ❧ ♥ ❧ —</div>
+        <h3>MEKAN</h3>
+        <h4>Harmonie Davet Evi</h4>
+        <div class="map-wrap">
+          <iframe title="Harmonie Davet Evi konumu"
+            src="https://www.google.com/maps?q=37.433853,29.353998&z=16&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a class="directions" href="https://maps.app.goo.gl/Lww8wdSa7mQRnWNNA?g_st=iw" target="_blank" rel="noopener">⌖ &nbsp; YOL TARİFİ AL</a>
+        <div class="bottom-mark">M <span>|</span> R</div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
