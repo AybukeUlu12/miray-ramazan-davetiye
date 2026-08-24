@@ -1,41 +1,4 @@
-const seal=document.getElementById('seal');
-const envelope=document.getElementById('envelope');
-const intro=document.getElementById('nameIntro');
-const music=document.getElementById('music');
-const sound=document.getElementById('soundToggle');
-
-seal.addEventListener('click', async ()=>{
-  try { music.volume=.72; await music.play(); } catch(e) {}
-  envelope.classList.add('open');
-  setTimeout(()=>{
-    envelope.style.display='none';
-    intro.classList.add('show');
-    intro.setAttribute('aria-hidden','false');
-  },1500);
-  setTimeout(()=>intro.classList.add('hide'),3900);
-  setTimeout(()=>{
-    intro.style.display='none';
-    document.body.classList.remove('locked');
-    sound.classList.add('visible');
-    window.scrollTo(0,0);
-  },4650);
-},{once:true});
-
-sound.addEventListener('click', async ()=>{
-  if(music.paused){ try{await music.play()}catch(e){} sound.classList.remove('muted'); sound.textContent='♪'; }
-  else { music.pause(); sound.classList.add('muted'); sound.textContent='×'; }
-});
-
-const target=new Date('2026-09-12T20:00:00+03:00').getTime();
-function updateCountdown(){
-  let d=Math.max(0,target-Date.now());
-  const days=Math.floor(d/86400000); d%=86400000;
-  const hours=Math.floor(d/3600000); d%=3600000;
-  const minutes=Math.floor(d/60000); d%=60000;
-  const seconds=Math.floor(d/1000);
-  document.getElementById('days').textContent=String(days).padStart(2,'0');
-  document.getElementById('hours').textContent=String(hours).padStart(2,'0');
-  document.getElementById('minutes').textContent=String(minutes).padStart(2,'0');
-  document.getElementById('seconds').textContent=String(seconds).padStart(2,'0');
-}
-updateCountdown(); setInterval(updateCountdown,1000);
+const cover=document.getElementById('cover'),seal=document.getElementById('seal'),invite=document.getElementById('invite'),music=document.getElementById('music'),musicBtn=document.getElementById('musicBtn');
+seal.addEventListener('click',async()=>{try{music.volume=.75;await music.play()}catch(e){} cover.classList.add('open');invite.classList.add('show');invite.setAttribute('aria-hidden','false');musicBtn.classList.add('show');setTimeout(()=>{cover.remove();window.scrollTo(0,0)},1750)});
+musicBtn.addEventListener('click',()=>{if(music.paused){music.play();musicBtn.classList.remove('muted')}else{music.pause();musicBtn.classList.add('muted')}});
+const target=new Date('2026-09-12T20:00:00+03:00').getTime();function tick(){let d=Math.max(0,target-Date.now());const day=Math.floor(d/864e5);d%=864e5;const hr=Math.floor(d/36e5);d%=36e5;const mi=Math.floor(d/6e4);const se=Math.floor((d%6e4)/1e3);days.textContent=String(day).padStart(2,'0');hours.textContent=String(hr).padStart(2,'0');mins.textContent=String(mi).padStart(2,'0');secs.textContent=String(se).padStart(2,'0')}tick();setInterval(tick,1000);
