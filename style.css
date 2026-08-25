@@ -1,5 +1,5 @@
 :root{
-  --paper:#efe6d9;
+  --paper:#eee4d7;
   --ink:#294236;
   --gold:#ad8448;
   --gold2:#bc9557;
@@ -28,40 +28,32 @@ body.locked{overflow:hidden}
 .invite.show{opacity:1}
 .approved-top{position:relative;background:var(--paper);z-index:2}
 /* Ana görselin alt kenarını devam bölümüne yumuşakça eriterek kesik sayfa hissini kaldırır. */
-.approved-top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:34px;background:linear-gradient(to bottom,rgba(239,230,217,0),var(--paper) 94%);pointer-events:none;z-index:3}
+.approved-top::after{content:"";position:absolute;left:7.2%;width:25%;bottom:-1px;height:118px;background:linear-gradient(to bottom,rgba(238,228,215,0) 0%,rgba(238,228,215,.12) 32%,rgba(238,228,215,.52) 68%,#eee4d7 100%);pointer-events:none;z-index:4}
 .approved-top img{display:block;width:100%;height:auto}
 
 /* IMPORTANT: continuation is full width. Side frame is drawn at the exact same x-position
    as the approved design, so there is no second block, margin jump or restarted frame. */
 .continuation{
   position:relative;
-  margin:-2px 0 0;
+  margin:-3px 0 0;
   padding:20px 8.2% 54px;
   text-align:center;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 18% 12%,rgba(255,255,255,.20) 0 1px,transparent 1.2px),
-    radial-gradient(circle at 72% 48%,rgba(120,85,45,.025) 0 1px,transparent 1.2px),
-    var(--paper);
-  background-size:11px 11px,14px 14px,auto;
+  background:var(--paper);
 }
 /* Tek ve kesintisiz altın çerçeve: bölüm bölüm yeniden başlamaz. */
 .invite::before,.invite::after{
-  content:"";position:absolute;top:0;bottom:0;width:1.35px;
-  background:var(--gold);opacity:1;z-index:12;pointer-events:none;
-  box-shadow:0 0 .35px rgba(173,132,72,.35)
+  content:"";position:absolute;top:0;bottom:0;width:1.8px;
+  background:#ad8448;opacity:1;z-index:20;pointer-events:none;
+  box-shadow:none;
 }
 .invite::before{left:6.48%}
 .invite::after{right:6.48%}
 
 .block,.wing-motif,.footer-motif{position:relative;z-index:3}
 .emboss{position:absolute;z-index:2;opacity:.62;pointer-events:none;filter:saturate(.75) brightness(1.05)}
-/* Sol kabartma, üst görseldeki çiçeğin devamı gibi başlar ve aşağı doğru yumuşakça kaybolur. */
-.emboss-left{
-  width:132px;left:-20px;top:-34px;opacity:.54;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.28) 8%,rgba(0,0,0,.78) 20%,rgba(0,0,0,.82) 48%,rgba(0,0,0,.30) 78%,transparent 100%);
-  mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.28) 8%,rgba(0,0,0,.78) 20%,rgba(0,0,0,.82) 48%,rgba(0,0,0,.30) 78%,transparent 100%);
-}
+/* Ana görseldeki sol kabartma CSS maskesiyle yumuşakça biter; devam bölümünde ikinci bir yaprak başlatılmaz. */
+.emboss-left{display:none}
 .emboss-right{width:132px;right:-22px;bottom:10px;transform:scaleX(-1)}
 
 h2{margin:0;color:var(--ink);font-size:24px;font-weight:600;letter-spacing:.14em}
@@ -79,14 +71,13 @@ h2{margin:0;color:var(--ink);font-size:24px;font-weight:600;letter-spacing:.14em
 .wing-motif .flip-line,.footer-motif .flip-line{transform:scaleX(-1)}
 .wing-motif .leaf,.footer-motif .leaf{font-size:18px;line-height:1;transform:rotate(-12deg)}
 .wing-motif .flip,.footer-motif .flip{transform:scaleX(-1) rotate(-12deg)}
-.wing-motif .heart,.footer-motif .heart{font-size:15px;line-height:1;font-family:Georgia,"Times New Roman",serif;color:var(--gold);font-variant-emoji:text}
 
 
 .single-gold-heart{
   position:relative;z-index:3;display:flex;align-items:center;justify-content:center;
   width:100%;margin:2px auto 22px;color:var(--gold);font-family:Georgia,"Times New Roman",serif;
 }
-.single-gold-heart span{font-size:17px;line-height:1;font-variant-emoji:text}
+
 
 .flow-block{padding:0}
 .timeline{position:relative;max-width:390px;margin:25px auto 0;text-align:left}
@@ -131,4 +122,26 @@ h2{margin:0;color:var(--ink);font-size:24px;font-weight:600;letter-spacing:.14em
 @media(prefers-reduced-motion:reduce){.door,.invite{transition-duration:.01ms!important}}
 
 /* Alt bölüm: yalnızca küçük gold kalp */
-.footer-gold-heart{position:relative;z-index:3;margin:22px auto 0;color:var(--gold);font-size:17px;line-height:1;text-align:center;font-family:Georgia,"Times New Roman",serif;}
+.footer-gold-heart{position:relative;z-index:3;margin:22px auto 0;height:18px;display:flex;align-items:center;justify-content:center}
+
+
+/* Saf CSS gold kalp: iOS emojiye dönüşmez, her cihazda altın kalır. */
+.css-heart{
+  position:relative;display:inline-block;width:12px;height:12px;
+  background:linear-gradient(135deg,#d9bb74 0%,#ad8448 52%,#e0c680 100%);
+  transform:rotate(-45deg);border-radius:1px;flex:0 0 auto;
+}
+.css-heart::before,.css-heart::after{
+  content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:inherit;
+}
+.css-heart::before{top:-6px;left:0}
+.css-heart::after{left:6px;top:0}
+.motif-heart{width:10px;height:10px;margin:0 4px}
+.motif-heart::before,.motif-heart::after{width:10px;height:10px}
+.motif-heart::before{top:-5px}.motif-heart::after{left:5px}
+.footer-heart{width:10px;height:10px}
+.footer-heart::before,.footer-heart::after{width:10px;height:10px}
+.footer-heart::before{top:-5px}.footer-heart::after{left:5px}
+
+/* Birleşim bölgesinde ayrı sayfa hissi oluşturabilecek kenar/çizgi yok. */
+.approved-top,.continuation{border:0;box-shadow:none}
