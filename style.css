@@ -145,3 +145,33 @@ h2{margin:0;color:var(--ink);font-size:24px;font-weight:600;letter-spacing:.14em
 
 /* Birleşim bölgesinde ayrı sayfa hissi oluşturabilecek kenar/çizgi yok. */
 .approved-top,.continuation{border:0;box-shadow:none}
+
+/* FINAL: Kabartmalı çiçekler altın çerçevenin ÜSTÜNDE kalır.
+   Çiçeğin bulunduğu bölgede çerçeve arkadan görünmez. */
+.continuation::after{
+  content:"";
+  position:absolute;
+  right:5.4%;
+  bottom:0;
+  width:105px;
+  height:205px;
+  z-index:21;
+  pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(238,228,215,0) 0%,
+    rgba(238,228,215,.82) 34%,
+    var(--paper) 58%,
+    var(--paper) 100%);
+}
+.emboss-right{
+  z-index:22;
+  opacity:.62;
+}
+
+@media(max-width:520px){
+  .continuation::after{
+    right:5.1%;
+    width:92px;
+    height:185px;
+  }
+}
